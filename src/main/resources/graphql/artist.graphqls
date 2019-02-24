@@ -1,0 +1,9 @@
+type Artist {
+   id: ID!
+   name: String!
+   country: String!
+}
+
+extend type Query {
+	findAllArtists: [Artist]
+}

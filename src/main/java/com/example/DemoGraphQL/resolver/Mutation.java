@@ -4,16 +4,24 @@ import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.example.DemoGraphQL.exception.BookNotFoundException;
 import com.example.DemoGraphQL.model.Author;
 import com.example.DemoGraphQL.model.Book;
+import com.example.DemoGraphQL.model.Song;
+import com.example.DemoGraphQL.repository.ArtistRepository;
 import com.example.DemoGraphQL.repository.AuthorRepository;
 import com.example.DemoGraphQL.repository.BookRepository;
+import com.example.DemoGraphQL.repository.SongRepository;
 
 public class Mutation implements GraphQLMutationResolver {
     private BookRepository bookRepository;
     private AuthorRepository authorRepository;
+	private SongRepository songRepository;
+	private ArtistRepository artistRepository;
 
-    public Mutation(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public Mutation(AuthorRepository authorRepository, BookRepository bookRepository,
+    		SongRepository songRepository, ArtistRepository artistRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
+        this.songRepository = songRepository;
+        this.artistRepository = artistRepository;
     }
 
     public Author newAuthor(String firstName, String lastName) {
@@ -24,6 +32,12 @@ public class Mutation implements GraphQLMutationResolver {
         authorRepository.save(author);
 
         return author;
+    }
+    
+    public Song newSong(Song songInput) {
+    	songRepository.save(songInput);
+    	
+    	return songInput;
     }
 
     public Book newBook(String title, String isbn, Integer pageCount, Long authorId) {
@@ -37,7 +51,7 @@ public class Mutation implements GraphQLMutationResolver {
 
         return book;
     }
-
+    
     public boolean deleteBook(Long id) {
         bookRepository.delete(id);
         return true;

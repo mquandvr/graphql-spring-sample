@@ -1,0 +1,23 @@
+type Song {
+   id: ID!
+   title: String!
+   duration: String!
+   genre: String!
+   artist: Artist!
+}
+
+type SongInput {
+   title: String!
+   duration: String!
+   genre: String!
+   artist: Artist!
+}
+
+extend type Query {
+   findAllSongs: [Song]
+   filterSongsByGenre(genre: String!): [Song]
+}
+
+extend type Mutations {
+	newSong(song: SongInput!): Song
+}

@@ -1,7 +1,13 @@
+schema {
+	query: Query
+	mutation: Mutation
+}
+
 type Author {
     id: ID!
     firstName: String!
     lastName: String!
+    books: [Book]
 }
 
 type Query {
