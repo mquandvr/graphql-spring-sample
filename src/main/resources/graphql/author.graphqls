@@ -8,6 +8,7 @@ type Author {
     firstName: String!
     lastName: String!
     books: [Book]
+    bookById(id: ID!): Book
 }
 
 type Query {

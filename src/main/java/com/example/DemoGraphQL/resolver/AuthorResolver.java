@@ -20,8 +20,8 @@ public class AuthorResolver implements GraphQLResolver<Author> {
         return bookRepository.findByAuthorId(author.getId());
     }
     
-    public Book getBook() {
-//    	return bookRepository.findOne(id);
-    	return null;
+    public Book getBookById(Author author, Long id) {
+    	return bookRepository.findByAuthorIdAndId(author.getId(), id);
+//    	return null;
     }
 }
