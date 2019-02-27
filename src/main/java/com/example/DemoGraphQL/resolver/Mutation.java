@@ -1,5 +1,8 @@
 package com.example.DemoGraphQL.resolver;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.example.DemoGraphQL.exception.BookNotFoundException;
 import com.example.DemoGraphQL.model.Author;
@@ -10,10 +13,22 @@ import com.example.DemoGraphQL.repository.AuthorRepository;
 import com.example.DemoGraphQL.repository.BookRepository;
 import com.example.DemoGraphQL.repository.SongRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Component
+@Slf4j
 public class Mutation implements GraphQLMutationResolver {
+	
+	@Autowired
     private BookRepository bookRepository;
+	
+	@Autowired
     private AuthorRepository authorRepository;
+	
+	@Autowired
 	private SongRepository songRepository;
+	
+	@Autowired
 	private ArtistRepository artistRepository;
 
     public Mutation(AuthorRepository authorRepository, BookRepository bookRepository,

@@ -1,6 +1,6 @@
 schema {
-	query: Query
-	mutation: Mutation
+    query: Query,
+    mutation: Mutation
 }
 
 type Author {
@@ -12,10 +12,13 @@ type Author {
 }
 
 type Query {
+	# Find all authors
     findAllAuthors: [Author]!
+    # Count all authors
     countAuthors: Long!
 }
 
 type Mutation {
+	# Add author by FirstName and LastName
     newAuthor(firstName: String!, lastName: String!) : Author!
 }

@@ -24,3 +24,20 @@ fragment book on Book {
 {
   "id": 3
 }
+
+
+mutation {
+  newBook(title: "React", isbn: "7", pageCount: 2, author: "1") {
+    title
+    isbn
+    pageCount
+  }
+}
+
+mutation {
+  updateBookPageCount(id: 1, pageCount: 10) {
+    title
+    isbn
+    pageCount
+  }
+}

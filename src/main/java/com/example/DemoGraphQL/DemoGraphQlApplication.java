@@ -55,31 +55,31 @@ public class DemoGraphQlApplication {
 		};
 	}
 
-	@Bean
-	public BookResolver authorResolver(AuthorRepository authorRepository) {
-		return new BookResolver(authorRepository);
-	}
-	
-	@Bean
-	public AuthorResolver bookResolver(BookRepository bookRepository) {
-		return new AuthorResolver(bookRepository);
-	}
-
-	@Bean
-	public Query query(AuthorRepository authorRepository,
-						BookRepository bookRepository,
-						SongRepository songRepository,
-						ArtistRepository artistRepository) {
-		return new Query(authorRepository, bookRepository, songRepository, artistRepository);
-	}
-
-	@Bean
-	public Mutation mutation(AuthorRepository authorRepository,
-								BookRepository bookRepository,
-								SongRepository songRepository,
-								ArtistRepository artistRepository) {
-		return new Mutation(authorRepository, bookRepository, songRepository, artistRepository);
-	}
+//	@Bean
+//	public BookResolver authorResolver(AuthorRepository authorRepository) {
+//		return new BookResolver(authorRepository);
+//	}
+//	
+//	@Bean
+//	public AuthorResolver bookResolver(BookRepository bookRepository) {
+//		return new AuthorResolver(bookRepository);
+//	}
+//
+//	@Bean
+//	public Query query(AuthorRepository authorRepository,
+//						BookRepository bookRepository,
+//						SongRepository songRepository,
+//						ArtistRepository artistRepository) {
+//		return new Query(authorRepository, bookRepository, songRepository, artistRepository);
+//	}
+//
+//	@Bean
+//	public Mutation mutation(AuthorRepository authorRepository,
+//								BookRepository bookRepository,
+//								SongRepository songRepository,
+//								ArtistRepository artistRepository) {
+//		return new Mutation(authorRepository, bookRepository, songRepository, artistRepository);
+//	}
 
 //	@Bean
 //	public CommandLineRunner demo(AuthorRepository authorRepository,
