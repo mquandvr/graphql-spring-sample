@@ -3,12 +3,15 @@ schema {
     mutation: Mutation
 }
 
+directive @auth(role : String!) on FIELD_DEFINITION
+
 type Author {
     id: ID!
     firstName: String!
     lastName: String!
     books: [Book]
     bookById(id: ID!): Book
+    salary: Float @auth(role : "manager")
 }
 
 type Query {
@@ -22,3 +25,4 @@ type Mutation {
 	# Add author by FirstName and LastName
     newAuthor(firstName: String!, lastName: String!) : Author!
 }
+

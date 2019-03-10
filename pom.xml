@@ -82,6 +82,16 @@
 		  <version>27.0.1-jre</version>
 		</dependency>
 		<dependency>
+		    <groupId>com.graphql-java</groupId>
+		    <artifactId>graphql-java-annotations</artifactId>
+		    <version>3.0.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.ratpack</groupId>
+		    <artifactId>ratpack-core</artifactId>
+		    <version>1.4.6</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>

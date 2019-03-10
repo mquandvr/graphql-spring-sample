@@ -13,3 +13,42 @@ Nhược điểm:
 Về cá nhân, mình thích sử dụng Apollo Stack (http://dev.apollodata.com/) hơn là Relay, lý do:
 + Rất dễ sử dụng
 + Support GraphQL subscriptions, caching, mutations, optimistic UI
+
+https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png
+
+type Food {
+    id: ID!
+    name: String!
+    unit: Int!
+    orderBy: String
+    createdAt: String
+    createdBy: String
+    drinks: [Drink]
+}
+
+type Drink {
+	id: ID!
+	name: String
+	unit: Int
+}
+
+type Query {
+	# Find all food
+    findAllFood: [Food]!
+    # Count all food
+    countFoods: Long!
+    # Find by id
+    findFoodById(id: ID!): Food
+}
+
+type Mutation {
+	# Add food
+    newFood(name: String!, unit: Int!, orderBy: String): Food!
+    # Update food
+    updateFood(id: ID!, input: Food): Food
+}
+
+schema {
+    query: Query,
+    mutation: Mutation
+}

@@ -35,4 +35,8 @@ public class AuthorResolver implements GraphQLResolver<Author> {
     	return bookRepository.findByAuthorIdAndId(author.getId(), id);
 //    	return null;
     }
+    
+    public float salary(Author author) {
+    	return 0.30F;
+    }
 }
